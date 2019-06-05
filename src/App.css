@@ -87,6 +87,7 @@ h1{
   padding: 2em;
   box-shadow: 10px 30px 60px rgba(0,0,0,.1);
   margin-bottom: 10em;
+  line-height: 1.5em;
 }
 
 .step h1{
@@ -110,4 +111,10 @@ h1{
   text-align: right;
   right: 0;
   /*background-color: blue;*/
+}
+
+b{
+  font-weight: 500;
+  border-bottom: 3px solid #d8b68a;
+  margin: 5px;
 }

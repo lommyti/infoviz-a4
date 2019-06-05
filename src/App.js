@@ -144,7 +144,7 @@ function App() {
 
           <div className="entire_step">
             <div className="step">
-              <h1>STEP 4</h1>
+              <h1>STEP 5</h1>
               <p>Place dough onto baking sheet in 1 inch balls, and
               <b data-tip="As the butter melts, the cookie begins to spread out and flatten.<br/>
                           The water in the dough creates vapors that cause the cookie to rise.<br/>
