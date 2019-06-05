@@ -20,9 +20,14 @@ import cookieImg from './img/cookie.png';
 
 
 
-function App() {
-  // constructor () {
-  //   super();
+class App extends React.Component {
+    constructor(props) {
+     super(props);
+     this.state = {
+        selected_ingred: null,
+        texture_change_text: null,
+     };
+   }
 
   //   this.state = {
   //     selected_ingred: null,
@@ -33,7 +38,18 @@ function App() {
   //   return
   // };
 
+  setTextureCrunchy = () => {
+    this.setState({texture_change_text: "For crunchy cookies..."})
+  }
 
+  setTextureChewy = () => {
+    this.setState({texture_change_text: "For chewy cookies..."})
+  }
+
+  setTextureCakey = () => {
+    this.setState({texture_change_text: "For cakey cookies..."})
+  }
+render(){
 
   return (
      <div className="w-h-100">
@@ -44,6 +60,18 @@ function App() {
         <div className="divider-brown"><div className="divider-brown-inside"></div></div>
         <div className="bar-brown"></div>
         <div className="App">
+          <p className="intro">
+            Everyone has a favorite kind of chocolate chip cookie, from wafer-thin and crispy to thick and cakey.
+            Though cookies come in a variety of different textures, they often borm from the same ingredients and general process.
+            It's in the proportion of the ingredients and a little bit of chemistry that goes on during the
+            actual baking that changes the texture.
+            <br/><br/>
+            To see how this works, let's make a batch of cookies! Scroll through the steps and follow the instructions to step through the
+            generalized steps that go into making chocolate chip cookies. Then we'll talk about some of the most popular textures and the changes
+            from an ordinary cookie that are needed to take yours to the next level!<br/><br/>
+            To learn more about each ingredient, hover over any of the <b data-tip="And you'll see info here!">underlined ingredients</b> and
+            a tooltip will appear that explains more information about how that particular ingredient impacts the baking process.
+          </p>
           <div className="entire_step">
             <div className="step">
               <h1>STEP 1</h1>
@@ -163,14 +191,26 @@ function App() {
               </div>
             </div>
           </div>
+          <p>And after all of that hard work, your cookies are done!</p>
           <div>
             <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
           </div>
+          <p>This, of course, is a little simpler than what <em>actually</em> goes on; we didn't even give you the proportions of the ingredients you were using!
+          Truthfully, there is no true baseline cookie that we can use as the gold standard here.
+          However, numerous sources have done tests to try and maximize the effects of these ingredients and create unique textures; we've compiled some of the best
+          we saw and tried to figure out what made each of them unique in terms of the relative ingredient proportions.
+          <br/><br/>
+          Interested in switching up your cookie? Do you want it to be... </p>
+          <button className="texture-button" onClick={this.setTextureCrunchy}>Crunchy</button>
+          <button className="texture-button" onClick={this.setTextureChewy}>Chewy</button>
+          <button className="texture-button" onClick={this.setTextureCakey}>Cakey</button>
+          <br/><br/>
+          <p>{this.state.texture_change_text}</p>
         </div>
-
         <ReactTooltip multiline={true} place="right" type="dark" effect="float"/>
       </div>
   );
+}
 }
 
 export default App;
