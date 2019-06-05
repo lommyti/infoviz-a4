@@ -8,15 +8,14 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import butterSugarImg from './img/butter_sugar.png';
 import eggVanillaImg from './img/egg_vanilla.png';
 import dryIngrededientsImg from './img/dry_ingredients.png';
-import chocChipsImg from './img/chocolate_chips.png'; 
+import chocChipsImg from './img/chocolate_chips.png';
 import cookieTrayImg from './img/cookie_tray.png';
 import emptyBowlImg from './img/bowl.png';
 import butterSugarBowlImg from './img/butter_sugar_bowl.png';
 import eggVanillaBowlImg from './img/egg_vanilla_bowl.png';
 import dryIngBowlImg from './img/dry_ingredients_bowl.png';
 import ovenImg from './img/oven.png';
-
-
+import cookieImg from './img/cookie.png';
 
 
 
@@ -43,6 +42,7 @@ function App() {
         <h2>Thomas Li, Ilham Nurjadin, Jodie Wei &middot;<br/> EECS 396: Interactive Information Visualization</h2>
         </div>
         <div className="divider-brown"><div className="divider-brown-inside"></div></div>
+        <div className="bar-brown"></div>
         <div className="App">
           <div className="entire_step">
             <div className="step">
@@ -51,7 +51,7 @@ function App() {
               <b data-tip="Granulated white sugar creates a thinner, crisper cookie.<br/>
                           Brown sugar contains molasses that helps absorb moisture, giving the cookie a chewier texture.<br/>
                           It also helps create more complex tastes when the Maillard reaction occurs during baking.<br/>
-                          If you want a puffier cookie, decrease the amount of sugar used overall."> sugar </b> 
+                          If you want a puffier cookie, decrease the amount of sugar used overall."> sugar </b>
                           and
               <b data-tip="Increasing the amount of butter increases the cookie's spread.<br/>
                           If you use melted butter, the water will dissolve the sugar, making the cookie more chewy and flat.<br/>
@@ -162,6 +162,9 @@ function App() {
                   <img src={ovenImg} style={{height: '30em'}} alt='oven'/>
               </div>
             </div>
+          </div>
+          <div>
+            <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
           </div>
         </div>
 

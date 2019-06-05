@@ -8,9 +8,11 @@ html,body{
 
 .App {
   padding: 3em;
+  padding-top: 0em;
   padding-right: 0em;
   background: #fff;
   border-left: 30px solid #d8b68a;
+  height: auto;
 }
 
 .divider-brown{
@@ -28,6 +30,13 @@ html,body{
   margin-left: 30px;
 }
 
+.bar-brown{
+  position: fixed;
+  width: 30px;
+  height: 100%;
+  background: #d8b68a;
+  top:0;
+}
 .w-h-100{
   height: 100%;
   width: 100%;
@@ -90,23 +99,15 @@ h1{
 .entire_step {
   margin-top: 10%;
   display: inline-flex;
+  justify-content: right;
 }
 
 .images {
   margin-right: 0;
   width: 70%;
   display: inline-flex;
-  float: right;
+  justify-content: flex-end;
+  text-align: right;
+  right: 0;
   /*background-color: blue;*/
 }
-
-.drag_images {
-
-}
-
-.static_images {
-  float: right;
-  margin: 0;
-}
-
-
