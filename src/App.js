@@ -191,19 +191,24 @@ render(){
               </div>
             </div>
           </div>
-          <p>And after all of that hard work, your cookies are done!</p>
-          <div>
+          <p>And after all of that hard work, your cookies are done!</p><br/><br/>
+          <div className="center-text">
             <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
+            <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
+            <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
+
           </div>
           <p>This, of course, is a little simpler than what <em>actually</em> goes on; we didn't even give you the proportions of the ingredients you were using!
           Truthfully, there is no true baseline cookie that we can use as the gold standard here.
           However, numerous sources have done tests to try and maximize the effects of these ingredients and create unique textures; we've compiled some of the best
           we saw and tried to figure out what made each of them unique in terms of the relative ingredient proportions.
           <br/><br/>
-          Interested in switching up your cookie? Do you want it to be... </p>
+          Interested in switching up your cookie? Do you want it to be... </p><br/><br/>
+          <div className="center-text">
           <button className="texture-button" onClick={this.setTextureCrunchy}>Crunchy</button>
           <button className="texture-button" onClick={this.setTextureChewy}>Chewy</button>
           <button className="texture-button" onClick={this.setTextureCakey}>Cakey</button>
+          </div>
           <br/><br/>
           <p>{this.state.texture_change_text}</p>
         </div>

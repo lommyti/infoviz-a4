@@ -154,3 +154,7 @@ button:hover{
   color: #d8b68a;
   background: #fff;
 }
+
+.center-text{
+  text-align: center;
+}
