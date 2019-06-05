@@ -8,6 +8,7 @@ html,body{
 
 .App {
   padding: 3em;
+  padding-right: 0em;
   background: #fff;
   border-left: 30px solid #d8b68a;
 }
@@ -67,7 +68,12 @@ h1{
   color: #fff;
 }
 
-.step{
+.entire_step {
+  width: 100%;
+  float: right;
+}
+
+.step {
   width: 30%;
   padding: 2em;
   box-shadow: 10px 30px 60px rgba(0,0,0,.1);
@@ -80,3 +86,27 @@ h1{
   font-size: 1.2em;
   color: #d8b68a;
 }
+
+.entire_step {
+  margin-top: 10%;
+  display: inline-flex;
+}
+
+.images {
+  margin-right: 0;
+  width: 70%;
+  display: inline-flex;
+  float: right;
+  /*background-color: blue;*/
+}
+
+.drag_images {
+
+}
+
+.static_images {
+  float: right;
+  margin: 0;
+}
+
+
