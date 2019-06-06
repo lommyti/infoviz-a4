@@ -3,25 +3,48 @@ html,body{
   width: 100%;
   font-family: "Rubik", sans-serif;
   color: #333;
-  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+#root{
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   padding: 3em;
   padding-top: 0em;
   padding-right: 0em;
+  width: 100%;
+  box-sizing: border-box;
   background: #fff;
   border-left: 30px solid #d8b68a;
   height: auto;
 }
 
+.other {
+  padding: 3em;
+  padding-top: 6em;
+  padding-right: 0em;
+  width: 100%;
+  background: #fff;
+  border-left: 30px solid #d8b68a;
+  height: auto;
+  box-sizing: border-box;
+}
+
+
 .intro{
   margin-top: 10%;
 }
 
-.App p{
+.App p, .other p{
   margin-left: 3em;
   width: 70%;
+  z-index:9;
+  position: relative;
   line-height: 1.8em;
 }
 
@@ -29,20 +52,21 @@ html,body{
   position: absolute;
   height: 15%;
   background: #d8b68a;
+  box-sizing: border-box;
   width: 100%;
 }
 
-.divider-brown-inside{
+.divider-brown-inside {
   height: 100%;
   background: #fff;
-  width: 100%;
+  width: 97%;
+  box-sizing: border-box;
   border-top-left-radius: 20em;
-  margin-left: 30px;
+  margin-left: 3%;
 }
-
 .bar-brown{
   position: fixed;
-  width: 30px;
+  width: 3%;
   height: 100%;
   background: #d8b68a;
   top:0;
@@ -52,6 +76,9 @@ html,body{
   height: 100%;
   width: 100%;
   position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .App-header {
@@ -100,6 +127,8 @@ h1{
   margin-bottom: 10em;
   line-height: 1.5em;
   padding-bottom: 0;
+  border-radius: 1em;
+  z-index: 99;
 }
 
 .step p{
@@ -116,16 +145,17 @@ h1{
 .entire_step {
   margin-top: 10%;
   display: inline-flex;
-  justify-content: right;
+  justify-content: left;
 }
 
 .images {
   margin-right: 0;
-  width: 70%;
+  width: 30%;
   display: inline-flex;
-  justify-content: flex-end;
-  text-align: right;
+  justify-content: flex-start;
+  text-align: left;
   right: 0;
+  z-index: 99;
   /*background-color: blue;*/
 }
 
@@ -157,4 +187,32 @@ button:hover{
 
 .center-text{
   text-align: center;
+}
+
+.bowl{
+    position: sticky;
+    top: 30px;
+    float: right;
+    box-sizing: border-box;
+    width:80%;
+    text-align: right;
+    margin-top: -22em;
+    height: 0em;
+    z-index: 1;
+}
+
+.lastp{
+  width: 100%;
+  display:block;
+  position: relative;
+  color: #fff;
+}
+
+.oven{
+  text-align: center;
+}
+
+.drag_images{
+  padding-left: 3em;
+  z-index: 99;
 }
