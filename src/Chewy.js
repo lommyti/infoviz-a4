@@ -11,6 +11,7 @@ render(){
       <p>For chewier cookies, try...</p>
       <ul>
 	      <li>Using more brown sugar instead of granulated sugar</li>
+	      <li>Using some baking powder with baking soda</li>
 	      <li>Baking the cookies for a shorter time, at a higher temperature</li>
       </ul>
      </div>
