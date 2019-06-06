@@ -4,6 +4,9 @@ import ReactTooltip from 'react-tooltip';
 import { DragSource } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
+import Cakey from './Cakey.js'
+import Crunchy from './Crunchy.js'
+import Chewy from './Chewy.js'
 
 import butterSugarImg from './img/butter_sugar.png';
 import eggVanillaImg from './img/egg_vanilla.png';
@@ -44,15 +47,15 @@ class App extends React.Component {
   // };
 
   setTextureCrunchy = () => {
-    this.setState({texture_change_text: "For crunchy cookies..."})
+    this.setState({texture_change_text: <Crunchy/>})
   }
 
   setTextureChewy = () => {
-    this.setState({texture_change_text: "For chewy cookies..."})
+    this.setState({texture_change_text: <Chewy/>})
   }
 
   setTextureCakey = () => {
-    this.setState({texture_change_text: "For cakey cookies..."})
+    this.setState({texture_change_text: <Cakey/>})
   }
 
   onDrag = (event, dragVal) => {
@@ -133,14 +136,13 @@ render(){
               <p>Mix
               <b data-tip="Granulated white sugar creates a thinner, crisper cookie.<br/>
                           Brown sugar contains molasses that helps absorb moisture, giving the cookie a chewier texture.<br/>
-                          It also helps create more complex tastes when the Maillard reaction occurs during baking.<br/>
+                          Brown sugar also helps create more complex tastes when the Maillard reaction occurs during baking.<br/>
                           If you want a puffier cookie, decrease the amount of sugar used overall."> sugar </b>
                           and
               <b data-tip="Increasing the amount of butter increases the cookie's spread.<br/>
-                          If you use melted butter, the water will dissolve the sugar, making the cookie more chewy and flat.<br/>
+                          If you use melted butter, the water will dissolve the sugar, making the cookie flatter.<br/>
                           Mixing room-temperature butter and sugar creates air pockets, for a puffier cookie.<br/>
-                          The fat in butter helps prevent gluten from forming, so using high-fat butter will make the cookie less chewy.<br/>
-                          Substituting with margarine or shortening will make the cookie spread less."> butter </b>
+                          The fat in butter helps prevent gluten from forming, so using high-fat butter will make the cookie less chewy."> butter </b>
               together by dragging them to the bowl.</p>
             </div>
 
@@ -179,8 +181,8 @@ render(){
             <div className="step">
               <h1>STEP 3</h1>
               <p>Combine
-              <b data-tip="Using more flour gives the cookie a thicker shape and makes it tender and crumbly,<br/>
-                          while using less makes it chewier or cakier."> flour</b>
+              <b data-tip="Using more flour in proportion to the wet ingredients<br/>
+                        gives the cookie a thicker shape and makes it tender and crumbly."> flour</b>
               , salt, and
               <b data-tip="Baking soda, or bicarbonate of soda, neutralizes other acidic ingredients, letting the cookie brown more.<br/>
                           Baking powder, a mixture of baking soda and an acidic ingredient,<br/>
@@ -264,7 +266,7 @@ render(){
                   <button className="texture-button" onClick={this.setTextureCakey}>Cakey</button>
                   </div>
                   <br/><br/>
-                  <p>{this.state.texture_change_text}</p>
+                  <div>{this.state.texture_change_text}</div>
                   </div>
 
       </div>
