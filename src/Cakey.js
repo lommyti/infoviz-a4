@@ -13,7 +13,7 @@ render(){
         <li>Adding more baking powder instead of baking soda</li>
         <li>Adding more flour</li>
         <li>Using colder butter</li>
-        <li>Baking for a shorter time, at higher temperatures"</li>
+        <li>Baking the cookies for a shorter time, at higher temperatures"</li>
       </ul>
      </div>
   );

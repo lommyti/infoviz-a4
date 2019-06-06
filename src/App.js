@@ -34,6 +34,11 @@ class App extends React.Component {
         img: emptyBowlImg,
         trayImg: trayImg,
         draggedObj: null,
+        stepOneInfo: null,
+        stepTwoInfo: null,
+        stepThreeInfo: null,
+        stepFourInfo: null,
+        stepFiveInfo: null,
      };
    }
 
@@ -64,6 +69,44 @@ class App extends React.Component {
     draggedObj: dragVal,
   });
 }
+
+  showButterInfo = () => {
+    this.setState({
+      stepOneInfo: "The liquids in the butter affect the spread of the cookie during baking. Higher liquid content increases spread; for example, melted butter will dissolve the sugar, increasing spread. Mixing room-temperature (or even cold) butter with sugar creates air pockets, decreasing spread. The fat in butter helps prevent gluten from forming. Gluten is what makes a cookie chewy. "
+    })
+  }
+
+  showSugarInfo = () => {
+    this.setState({
+      stepOneInfo: "Granulated white sugar removes moisture from the dough and also encourages browning due to caramelization. Brown sugar contains molasses that helps absorb moisture. It also helps create more complex tastes when the Maillard reaction occurs during baking."
+    })
+  }
+
+  showEggInfo = () => {
+    this.setState({
+      stepTwoInfo: "The liquid in eggs bond with the starch and protein in the dough, giving a cookie its structure. The fat in egg yolks act as a tenderizer, making a softer cookie, while egg whites tend to make cookies drier.",
+    })
+  }
+
+  showFlourInfo = () => {
+    this.setState({
+      stepThreeInfo: "Using more flour in proportion to the wet ingredients decreases the liquid content, preventing spread and creating a cakier cookie.",
+    })
+  }
+
+  showBicarbInfo = () => {
+    this.setState({
+      stepThreeInfo: "Baking soda, or bicarbonate of soda, neutralizes other acidic ingredients, letting the cookie brown more. Baking powder, a mixture of baking soda and an acidic ingredient, creates more carbon dioxide during baking, making the cookie puffier and lighter colored.",
+    })
+  }
+
+  showBakeInfo = () => {
+    this.setState({
+      stepFiveInfo: "As the butter melts, the cookie begins to spread out and flatten. The water in the dough creates vapors that cause the cookie to rise. Bicarbonates breaking down into carbon dioxide also cause rising, leaving holes that make the cookie flaky. Finally, when the cookie reaches the right temperature (around 320F), the sugars caramelize. The Maillard reaction between the amino acids and sugars (like glucose and fructose) also occurs, creating new flavors and browning the cookie."
+    })
+  }
+
+
 
 onDragOver = (event) => {
   event.preventDefault();
@@ -134,15 +177,14 @@ render(){
             <div className="step">
               <h1>STEP 1</h1>
               <p>Mix
-              <b data-tip="Granulated white sugar creates a thinner, crisper cookie.<br/>
-                          Brown sugar contains molasses that helps absorb moisture, giving the cookie a chewier texture.<br/>
-                          Brown sugar also helps create more complex tastes when the Maillard reaction occurs during baking.<br/>
-                          If you want a puffier cookie, decrease the amount of sugar used overall."> sugar </b>
+              <b onClick={this.showSugarInfo} 
+                data-tip="Use more granulated sugar for a crunchier, flatter cookie.<br/>
+                      For a chewier, moister cookie, use more brown sugar.<br/>
+                      For a puffier cookie, decrease the amount of sugar used overall."> sugar </b>
                           and
-              <b data-tip="Increasing the amount of butter increases the cookie's spread.<br/>
-                          If you use melted butter, the water will dissolve the sugar, making the cookie flatter.<br/>
-                          Mixing room-temperature butter and sugar creates air pockets, for a puffier cookie.<br/>
-                          The fat in butter helps prevent gluten from forming, so using high-fat butter will make the cookie less chewy."> butter </b>
+              <b onClick={this.showButterInfo} 
+                data-tip="Use more butter, or melted butter for a flatter cookie.<br/>
+                        Use solid butter for a puffier cookie."> butter </b>
               together by dragging them to the bowl.</p>
             </div>
 
@@ -154,6 +196,7 @@ render(){
               </div>
             </div>
           </div>
+          <p>{this.state.stepOneInfo}</p>
 
           <br/>
 
@@ -162,8 +205,8 @@ render(){
             <div className="step">
               <h1>STEP 2</h1>
               <p>Add
-              <b data-tip="The fat in egg yolks act as a tenderizer, making a softer cookie, while egg whites tend to make cookies drier.<br/>
-                          The egg bonds with the flour, giving it structure. The protein in the egg increases chewiness. "> eggs </b>
+              <b onClick={this.showEggInfo} 
+                data-tip="Use a little less egg for crunchier cookies.<br/>"> eggs </b>
               and vanilla.</p>
               </div>
 
@@ -173,7 +216,7 @@ render(){
                 </div>
               </div>
             </div>
-
+            <p>{this.state.stepTwoInfo}</p>
 
           <br/>
 
@@ -181,12 +224,11 @@ render(){
             <div className="step">
               <h1>STEP 3</h1>
               <p>Combine
-              <b data-tip="Using more flour in proportion to the wet ingredients<br/>
-                        gives the cookie a thicker shape and makes it tender and crumbly."> flour</b>
+              <b onClick={this.showFlourInfo} 
+                data-tip="Use more flour for a tender, crumbly cookie. Use less flour for a chewier, denser cookie.."> flour</b>
               , salt, and
-              <b data-tip="Baking soda, or bicarbonate of soda, neutralizes other acidic ingredients, letting the cookie brown more.<br/>
-                          Baking powder, a mixture of baking soda and an acidic ingredient,<br/>
-                          creates more carbon dioxide during baking, making the cookie puffier and lighter colored."> bicarbonates </b>
+              <b onClick={this.showBicarbInfo} 
+                data-tip="Use more baking powder for a thicker, cakier cookie."> bicarbonates </b>
               in a separate bowl.</p>
             </div>
 
@@ -198,6 +240,7 @@ render(){
               </div>
             </div>
           </div>
+          <p>{this.state.stepThreeInfo}</p>
 
           <br/>
 
@@ -205,8 +248,7 @@ render(){
           <div className="entire_step">
             <div className="step">
               <h1>STEP 4</h1>
-              <p>Combine wet and dry ingredients, and fold in
-              <b data-tip="Chocolate chips make the cookie taste better."> chocolate chips</b>.</p>
+              <p>Combine wet and dry ingredients, and fold in chocolate chips.</p>
             </div>
 
             <div className="images">
@@ -217,7 +259,7 @@ render(){
               </div>
             </div>
           </div>
-
+          <p>{this.state.stepFourInfo}</p>
 
           <br/>
 
@@ -225,12 +267,9 @@ render(){
             <div className="step">
               <h1>STEP 5</h1>
               <p>Place dough onto baking sheet in 1 inch balls, and
-              <b data-tip="As the butter melts, the cookie begins to spread out and flatten.<br/>
-                          The water in the dough creates vapors that cause the cookie to rise.<br/>
-                          Bicarbonates breaking down into carbon dioxide also cause rising, leaving holes that make the cookie flaky.<br/>
-                          Finally, when the cookie reaches the right temperature (around 320F), the sugars caramelize.<br/>
-                          The Maillard reaction between the amino acids and sugars (like glucose and fructose) also occurs,<br/>
-                          creating new flavors and browning the cookie."> bake </b> in oven.</p>
+              <b onClick={this.showBakeInfo} 
+              data-tip="Bake at a low temperature for a longer time time for crisper, thinner cookies.<br/>
+                        Bake for a shorter time at a higher temperature for softer, thicker cookies."> bake </b> in oven.</p>
           </div>
 
             <div className="images">
@@ -240,6 +279,10 @@ render(){
                 </div>
             </div>
           </div>
+          <p>{this.state.stepFiveInfo}</p>
+
+
+
           <div className="lastp">
           <p>And after all of that hard work, your cookies are done!</p></div>
 
