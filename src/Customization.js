@@ -206,7 +206,7 @@ render(){
       <div className="radio">
         <p>Baking Time</p>
         <label>
-          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="shorter" selected={this.props.cookieData.time === 'shorter' &&} />
+          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="shorter" selected={this.props.cookieData.time === 'shorter'} />
           Shorter
         </label>
       </div>
