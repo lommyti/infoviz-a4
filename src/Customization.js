@@ -23,9 +23,11 @@ render(){
     <div>
 
     <div class="customizationViz">
+    <h2>COOKIE VARIABLES</h2>
     <div class="customizationButtons">
+    <p>White Sugar</p>
+
       <div className="radio">
-        <p>Granulated Sugar</p>
         <label>
           <input type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.sugar === 'less'} />
           Less
@@ -43,9 +45,9 @@ render(){
           More
         </label>
       </div>
+      <p>Brown Sugar</p>
 
       <div className="radio">
-        <p>Brown Sugar</p>
         <label>
           <input type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.brownsugar === 'less'} />
           Less
@@ -63,9 +65,9 @@ render(){
           More
         </label>
       </div>
+      <p>Butter</p>
 
       <div className="radio">
-        <p>Butter</p>
         <label>
           <input type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.butter === 'less'} />
           Less
@@ -83,9 +85,11 @@ render(){
           More
         </label>
       </div>
+      </div>
+      <div class="customizationButtons">
+      <p>Butter Temp</p>
 
       <div className="radio">
-        <p>Butter Temperature</p>
         <label>
           <input type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="melted" selected={this.props.cookieData.butter_temp === 'melted'} />
           Melted
@@ -103,9 +107,9 @@ render(){
           Cold
         </label>
       </div>
+      <p>Egg</p>
 
       <div className="radio">
-        <p>Egg</p>
         <label>
           <input type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.egg === 'less'} />
           Less
@@ -124,8 +128,9 @@ render(){
         </label>
       </div>
 
+      <p>Flour</p>
+
       <div className="radio">
-        <p>Flour</p>
         <label>
           <input type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.flour === 'less'} />
           Less
@@ -143,29 +148,12 @@ render(){
           More
         </label>
       </div>
+      </div>
+      <div class="customizationButtons">
+
+      <p>Baking Powder</p>
 
       <div className="radio">
-        <p>Baking Soda</p>
-        <label>
-          <input type="radio" name="bakingsoda" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.bakingsoda === 'less'} />
-          Less
-        </label>
-      </div>
-      <div className="radio">
-        <label>
-          <input defaultChecked type="radio" name="bakingsoda" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.bakingsoda === 'regular'} />
-          Regular
-        </label>
-      </div>
-      <div className="radio">
-        <label>
-          <input type="radio" name="bakingsoda" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.bakingsoda === 'more'} />
-          More
-        </label>
-      </div>
-
-      <div className="radio">
-        <p>Baking Powder</p>
         <label>
           <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.bakingpowder === 'less'} />
           Less
@@ -183,9 +171,9 @@ render(){
           More
         </label>
       </div>
+      <p>Baking Temp</p>
 
       <div className="radio">
-        <p>Baking Temperature</p>
         <label>
           <input type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="lower" selected={this.props.cookieData.temp === 'lower'} />
           Lower
@@ -202,29 +190,29 @@ render(){
           <input type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="higher" selected={this.props.cookieData.temp === 'higher'} />
           Higher
         </label>
+        <p>Baking Time</p>
 
       <div className="radio">
-        <p>Baking Time</p>
         <label>
-          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="shorter" selected={this.props.cookieData.time === 'shorter'} />
+          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="shorter" selected={this.props.cookieData.time === 'shorter'} />
           Shorter
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.time === 'regular'} />
+          <input defaultChecked type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.time === 'regular'} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="longer" selected={this.props.cookieData.time === 'longer'} />
+          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="longer" selected={this.props.cookieData.time === 'longer'} />
           Longer
         </label>
       </div>
 
       </div>
-      
+
     </div>
       <div class="customizationImages">
         <img src={cookieImg} style={this.state.cookieSpread}/>
@@ -244,7 +232,7 @@ render(){
         <td>Crispy</td> <td>Chewy</td> <td>Cakey</td></tr></table></div>
       </div>
 
-      
+
     </div>
   );
 }

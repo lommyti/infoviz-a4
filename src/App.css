@@ -220,21 +220,31 @@ button:hover{
 .customizationViz{
   height: 20em;
   padding: 3em;
+
+}
+
+.customizationViz h2{
+  letter-spacing: 8px;
+  font-weight: 500;
 }
 
 .customizationButtons{
-  width: 50%;
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
 }
 .customizationImages{
   float:right;
   width: 50%;
+  padding-left: 5%;
 }
 
 .customizationBar{
-  width: 50%;
+  width: 60%;
   display:block;
   float:right;
-  padding-right: 3em;
+  padding-left: 8em;
+  box-sizing: border-box;
   padding-bottom: 8em;
 }
 
@@ -276,4 +286,24 @@ table{
 
 td{
   width: 33%;
+}
+
+.radio {
+  padding-right: 5%;
+}
+
+.customizationButtons p{
+  margin-top: 1.9em;
+  margin-left: 0;
+  margin-bottom: .5em;
+  background: #d8b68a;
+  font-weight: 500;
+  padding: .5em;
+  border-radius: .25em;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: .75px;
+  font-size: .75em;
+  box-shadow: 0px 10px 5px -8px rgba(0,0,0,.1);
+
 }
