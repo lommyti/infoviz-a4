@@ -7,6 +7,8 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import Cakey from './Cakey.js'
 import Crunchy from './Crunchy.js'
 import Chewy from './Chewy.js'
+import Customization from './Customization.js'
+
 
 import butterSugarImg from './img/butter_sugar.png';
 import eggVanillaImg from './img/egg_vanilla.png';
@@ -177,12 +179,12 @@ render(){
             <div className="step">
               <h1>STEP 1</h1>
               <p>Mix
-              <b onClick={this.showSugarInfo} 
+              <b onClick={this.showSugarInfo}
                 data-tip="Use more granulated sugar for a crunchier, flatter cookie.<br/>
                       For a chewier, moister cookie, use more brown sugar.<br/>
                       For a puffier cookie, decrease the amount of sugar used overall."> sugar </b>
                           and
-              <b onClick={this.showButterInfo} 
+              <b onClick={this.showButterInfo}
                 data-tip="Use more butter, or melted butter for a flatter cookie.<br/>
                         Use solid butter for a puffier cookie."> butter </b>
               together by dragging them to the bowl.</p>
@@ -205,7 +207,7 @@ render(){
             <div className="step">
               <h1>STEP 2</h1>
               <p>Add
-              <b onClick={this.showEggInfo} 
+              <b onClick={this.showEggInfo}
                 data-tip="Use a little less egg for crunchier cookies.<br/>"> eggs </b>
               and vanilla.</p>
               </div>
@@ -224,10 +226,10 @@ render(){
             <div className="step">
               <h1>STEP 3</h1>
               <p>Combine
-              <b onClick={this.showFlourInfo} 
+              <b onClick={this.showFlourInfo}
                 data-tip="Use more flour for a tender, crumbly cookie. Use less flour for a chewier, denser cookie.."> flour</b>
               , salt, and
-              <b onClick={this.showBicarbInfo} 
+              <b onClick={this.showBicarbInfo}
                 data-tip="Use more baking powder for a thicker, cakier cookie."> bicarbonates </b>
               in a separate bowl.</p>
             </div>
@@ -267,7 +269,7 @@ render(){
             <div className="step">
               <h1>STEP 5</h1>
               <p>Place dough onto baking sheet in 1 inch balls, and
-              <b onClick={this.showBakeInfo} 
+              <b onClick={this.showBakeInfo}
               data-tip="Bake at a low temperature for a longer time time for crisper, thinner cookies.<br/>
                         Bake for a shorter time at a higher temperature for softer, thicker cookies."> bake </b> in oven.</p>
           </div>
@@ -310,8 +312,9 @@ render(){
                   </div>
                   <br/><br/>
                   <div>{this.state.texture_change_text}</div>
-                  </div>
+                  <Customization/>
 
+                  </div>
       </div>
   );
 }

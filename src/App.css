@@ -216,3 +216,64 @@ button:hover{
   padding-left: 3em;
   z-index: 99;
 }
+
+.customizationViz{
+  height: 20em;
+  padding: 3em;
+}
+
+.customizationButtons{
+  width: 50%;
+}
+.customizationImages{
+  float:right;
+  width: 50%;
+}
+
+.customizationBar{
+  width: 50%;
+  display:block;
+  float:right;
+  padding-right: 3em;
+  padding-bottom: 8em;
+}
+
+.customizationLine{
+  width: 75%;
+  height: 4px;
+  background: #484848;
+  vertical-align: middle;
+  display: inline-block;
+  z-index: 9;
+}
+
+.customizationDivider{
+  width: 4px;
+  height: 5px;
+  background: #484848;
+  display:inline-block;
+  line-height: 3px;
+  border-bottom: 4px solid #484848;
+}
+
+.customizationImages img{
+  height: 20em;
+}
+
+.customizationPointer{
+  width: 6px;
+  height: 30px;
+  border-radius: 10px 10px 50px 50px;
+  background: #d8b68a;
+  margin-top: -30px;
+  position: relative;
+  z-index: 999;
+}
+
+table{
+  width: 100%;
+}
+
+td{
+  width: 33%;
+}
