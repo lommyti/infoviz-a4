@@ -192,19 +192,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.time === '1'} />
+          <input type="radio" name="time" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.time === '1'} />
           Shorter
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.time === "0"} />
+          <input defaultChecked type="radio" name="time" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.time === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.time === "-1"} />
+          <input type="radio" name="time" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.time === "-1"} />
           Longer
         </label>
       </div>

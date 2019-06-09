@@ -268,7 +268,7 @@ button:hover{
 }
 
 .customizationImages img{
-  height: 18em;
+  height: 20em;
   position: absolute;
   transition: .4s ease-in-out;
 }
