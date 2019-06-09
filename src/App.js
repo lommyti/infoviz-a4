@@ -22,7 +22,7 @@ import dryIngBowlImg from './img/dry_ingredients_bowl.png';
 import ovenImg from './img/oven.png';
 import cookieImg from './img/cookie.png';
 import chocChipsBowlImg from './img/chocolate_chips_bowl.png'
-
+import ovenGif from './img/oven.gif'
 
 
 
@@ -34,6 +34,7 @@ class App extends React.Component {
         texture_change_text: null,
         img: emptyBowlImg,
         trayImg: trayImg,
+        ovenImg:ovenImg,
         draggedObj: null,
         stepOneInfo: null,
         stepTwoInfo: null,
@@ -212,6 +213,13 @@ this.setState({
   trayImg: cookieTrayImg,
 });
 }
+
+else if(this.state.draggedObj == 6) {
+this.setState({
+  trayImg: trayImg,
+  ovenImg: ovenGif,
+});
+}
 }
 
 render(){
@@ -237,7 +245,8 @@ render(){
             generalized steps that go into making chocolate chip cookies. Then we'll talk about some of the most popular textures and the changes
             from an ordinary cookie that are needed to take yours to the next level!<br/><br/>
             To learn more about each ingredient, hover over any of the <b data-tip="And you'll see info here!">underlined ingredients</b> and
-            a tooltip will appear that explains more information about how that particular ingredient impacts the baking process.<br/><br/>
+            a tooltip will appear that gives a tip about how that ingredient affects the <em>physical</em> structure of your cookie. Then click on
+            the name to see the <em>chemical/scientific</em> description.<br/><br/>
             Look to your right! We even got you a bowl.
           </p>
           <div className="bowl">
@@ -256,7 +265,7 @@ render(){
               <b onClick={this.showButterInfo}
                 data-tip="Use more butter, or melted butter for a flatter cookie.<br/>
                         Use solid butter for a puffier cookie."> butter </b>
-              together by dragging them to the bowl.</p>
+              together by dragging them into the bowl on the right.</p>
             </div>
 
             <div className="images">
@@ -278,7 +287,7 @@ render(){
               <p>Add
               <b onClick={this.showEggInfo}
                 data-tip="Use a little less egg for crunchier cookies.<br/>"> eggs </b>
-              and vanilla.</p>
+              and vanilla by dragging them into the bowl on the right.</p>
               </div>
 
               <div className="images">
@@ -300,7 +309,7 @@ render(){
               , salt, and
               <b onClick={this.showBicarbInfo}
                 data-tip="Use more baking powder for a thicker, cakier cookie."> bicarbonates </b>
-              in a separate bowl.</p>
+              , then combine the wet and dry ingredients by dragging them into the bowl on the right.</p>
             </div>
 
             <div className="images">
@@ -319,7 +328,7 @@ render(){
           <div className="entire_step">
             <div className="step">
               <h1>STEP 4</h1>
-              <p>Combine wet and dry ingredients, and fold in chocolate chips.</p>
+              <p>Fold in chocolate chips by dragging them into the bowl on the right!</p>
             </div>
 
             <div className="images">
@@ -337,15 +346,15 @@ render(){
           <div className="entire_step">
             <div className="step">
               <h1>STEP 5</h1>
-              <p>Place dough onto baking sheet in 1 inch balls, and
+              <p>Place dough onto baking sheet in 1 inch balls by dragging the bowl onto the baking sheet, and then they'll be ready to
               <b onClick={this.showBakeInfo}
               data-tip="Bake at a low temperature for a longer time time for crisper, thinner cookies.<br/>
-                        Bake for a shorter time at a higher temperature for softer, thicker cookies."> bake </b> in oven.</p>
+                        Bake for a shorter time at a higher temperature for softer, thicker cookies."> bake </b> by dragging them to the oven!</p>
           </div>
 
             <div className="images">
               <div className="drag_images">
-                  <img src={this.state.trayImg} style={{height: '20em'}} alt='cookie tray'  onDrop={event => this.onDrop(event)}
+                  <img src={this.state.trayImg} style={{height: '20em'}} alt='cookie tray'  onDrag={(event) => this.onDrag(event, 6)}  onDrop={event => this.onDrop(event)}
              onDragOver={(event => this.onDragOver(event))}/>
                 </div>
             </div>
@@ -359,7 +368,8 @@ render(){
 
         </div>
         <div className="oven">
-            <img src={ovenImg} style={{height: '30em'}} alt='oven'/>
+            <img src={this.state.ovenImg} style={{height: '30em'}} alt='oven' onDrop={event => this.onDrop(event)}
+       onDragOver={(event => this.onDragOver(event))}/>
         </div>
         <div className="other"><p>And after all of that hard work, your cookies are done!</p>
                 <br/><br/>
