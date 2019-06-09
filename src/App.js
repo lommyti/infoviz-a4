@@ -9,7 +9,6 @@ import Crunchy from './Crunchy.js'
 import Chewy from './Chewy.js'
 import Customization from './Customization.js'
 
-
 import butterSugarImg from './img/butter_sugar.png';
 import eggVanillaImg from './img/egg_vanilla.png';
 import dryIngrededientsImg from './img/dry_ingredients.png';
@@ -41,6 +40,17 @@ class App extends React.Component {
         stepThreeInfo: null,
         stepFourInfo: null,
         stepFiveInfo: null,
+
+        sugar: 'regular',
+        brownsugar: 'regular',
+        butter: 'regular',
+        butter_temp: 'regular',
+        egg: 'regular',
+        flour: 'regular',
+        bakingsoda: 'regular',
+        bakingpowder: 'regular',
+        temp: 'regular',
+        time: 'regular',
      };
    }
 
@@ -66,11 +76,18 @@ class App extends React.Component {
   }
 
   onDrag = (event, dragVal) => {
-  event.preventDefault();
-  this.setState({
-    draggedObj: dragVal,
-  });
-}
+    event.preventDefault();
+    this.setState({
+      draggedObj: dragVal,
+    });
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    console.log(this.state)
+  }
 
   showButterInfo = () => {
     this.setState({
@@ -294,7 +311,7 @@ render(){
         </div>
         <div className="other"><p>And after all of that hard work, your cookies are done!</p>
                 <br/><br/>
-                <div class="center-text">
+                <div className="center-text">
                 <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
                 <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
                 <img src={cookieImg} style={{height: '20em'}} alt='cookie'/>
@@ -312,8 +329,7 @@ render(){
                   </div>
                   <br/><br/>
                   <div>{this.state.texture_change_text}</div>
-                  <Customization/>
-
+                  <Customization handleChange={this.handleChange} cookieData={this.state}/>
                   </div>
       </div>
   );
