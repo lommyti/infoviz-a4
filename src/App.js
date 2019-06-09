@@ -36,6 +36,7 @@ class App extends React.Component {
         trayImg: trayImg,
         ovenImg:ovenImg,
         draggedObj: null,
+        currentDragState: 0,
         stepOneInfo: null,
         stepTwoInfo: null,
         stepThreeInfo: null,
@@ -70,7 +71,22 @@ class App extends React.Component {
   // };
 
   setTextureCrunchy = () => {
-    this.setState({texture_change_text: <Crunchy/>})
+    return new Promise((resolve, reject) => {
+        //do something for 5 seconds
+        this.setState({texture_change_text: <Crunchy/>,
+        sugar:"1"})
+        resolve();
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.calculateScore();
+            resolve();
+        });
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.resizeCookie();
+            resolve();
+        });
+    });
   }
 
   setTextureChewy = () => {
@@ -185,25 +201,36 @@ onDragOver = (event) => {
 }
 
 onDrop = (event) => {
-  if(this.state.draggedObj == 1) {
+
+  if(this.state.draggedObj-1 !== this.state.currentDragState) {
+    alert("Hey! Please read the instructions and follow the order for making the cookies in order. Thanks!");
+  }
+  else if(this.state.draggedObj === 1) {
   this.setState({
     img: butterSugarBowlImg,
+    currentDragState:1,
   });
 }
-else if(this.state.draggedObj == 2) {
+else if(this.state.draggedObj === 2) {
 this.setState({
   img: eggVanillaBowlImg,
+  currentDragState:2,
+
 });
 }
-else if(this.state.draggedObj == 3) {
+else if(this.state.draggedObj === 3) {
 this.setState({
   img: dryIngBowlImg,
+  currentDragState:3,
+
 });
 }
 
 else if(this.state.draggedObj == 4) {
 this.setState({
   img: chocChipsBowlImg,
+  currentDragState:4,
+
 });
 }
 
@@ -211,6 +238,8 @@ else if(this.state.draggedObj == 5) {
 this.setState({
   img:emptyBowlImg,
   trayImg: cookieTrayImg,
+  currentDragState:5,
+
 });
 }
 
@@ -218,6 +247,8 @@ else if(this.state.draggedObj == 6) {
 this.setState({
   trayImg: trayImg,
   ovenImg: ovenGif,
+  currentDragState:6,
+
 });
 }
 }
@@ -383,15 +414,20 @@ render(){
                   However, numerous sources have done tests to try and maximize the effects of these ingredients and create unique textures; we've compiled some of the best
                   we saw and tried to figure out what made each of them unique in terms of the relative ingredient proportions.
                   <br/><br/>
-                  Interested in switching up your cookie? Do you want it to be... </p><br/><br/>
-                  <div className="center-text">
+                  To help you understand these textures, we've created a sample cookie for you to test with! You can control the
+                  relative ingredient proportions and see how they help you accomplish a <em>crispy, chewy, or cakey</em> cookie.
+
+                  <br/><br/>
+                  A quick breakdown: <em>crispy</em> cookies tend to spread a lot and not rise very much, <em>chewy</em> cookies do a moderate
+                  amount of both, and <em>cakey</em> cookies tend to not spread too much and to rise a lot. You can see the way these affect
+                  the size and height of the cookie as you change the options below, or choose one of the three defaults! </p><br/><br/>
+                  <h2>Cookie Variables</h2>
+                  <Customization handleChange={this.handleChange} cookieData={this.state}/>
+                  <div className="left-text">
                   <button className="texture-button" onClick={this.setTextureCrunchy}>Crunchy</button>
                   <button className="texture-button" onClick={this.setTextureChewy}>Chewy</button>
                   <button className="texture-button" onClick={this.setTextureCakey}>Cakey</button>
                   </div>
-                  <br/><br/>
-                  <div>{this.state.texture_change_text}</div>
-                  <Customization handleChange={this.handleChange} cookieData={this.state}/>
                   </div>
       </div>
   );

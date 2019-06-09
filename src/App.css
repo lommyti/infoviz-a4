@@ -220,12 +220,14 @@ button:hover{
 .customizationViz{
   height: 20em;
   padding: 3em;
-
+  padding-top: 0;
 }
 
-.customizationViz h2{
+.other h2{
   letter-spacing: 8px;
   font-weight: 500;
+  text-transform: uppercase;
+  padding-left:3em;
 }
 
 .customizationButtons{
@@ -310,4 +312,8 @@ td{
   font-size: .75em;
   box-shadow: 0px 10px 5px -8px rgba(0,0,0,.1);
 
+}
+
+.left-text{
+  margin-top: 2em;
 }
