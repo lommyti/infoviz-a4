@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/infoviz-a4/static/css/main.9a6279c8.chunk.css",
+    "main.js": "/infoviz-a4/static/js/main.b0fd3a6e.chunk.js",
+    "main.js.map": "/infoviz-a4/static/js/main.b0fd3a6e.chunk.js.map",
+    "runtime~main.js": "/infoviz-a4/static/js/runtime~main.19a0dda0.js",
+    "runtime~main.js.map": "/infoviz-a4/static/js/runtime~main.19a0dda0.js.map",
+    "static/js/2.4374101f.chunk.js": "/infoviz-a4/static/js/2.4374101f.chunk.js",
+    "static/js/2.4374101f.chunk.js.map": "/infoviz-a4/static/js/2.4374101f.chunk.js.map",
+    "index.html": "/infoviz-a4/index.html",
+    "precache-manifest.5dd1f498010ecad69e23b248108fba78.js": "/infoviz-a4/precache-manifest.5dd1f498010ecad69e23b248108fba78.js",
+    "service-worker.js": "/infoviz-a4/service-worker.js",
+    "static/css/main.9a6279c8.chunk.css.map": "/infoviz-a4/static/css/main.9a6279c8.chunk.css.map",
+    "static/media/bowl.png": "/infoviz-a4/static/media/bowl.82f629c0.png",
+    "static/media/butter_sugar.png": "/infoviz-a4/static/media/butter_sugar.7341d326.png",
+    "static/media/butter_sugar_bowl.png": "/infoviz-a4/static/media/butter_sugar_bowl.d831f849.png",
+    "static/media/chocolate_chips.png": "/infoviz-a4/static/media/chocolate_chips.0cfab0fd.png",
+    "static/media/chocolate_chips_bowl.png": "/infoviz-a4/static/media/chocolate_chips_bowl.fe364a64.png",
+    "static/media/cookie.png": "/infoviz-a4/static/media/cookie.31a004dd.png",
+    "static/media/cookie_side_view.png": "/infoviz-a4/static/media/cookie_side_view.808ffbfe.png",
+    "static/media/cookie_tray.png": "/infoviz-a4/static/media/cookie_tray.91b8101b.png",
+    "static/media/dry_ingredients.png": "/infoviz-a4/static/media/dry_ingredients.5966224f.png",
+    "static/media/dry_ingredients_bowl.png": "/infoviz-a4/static/media/dry_ingredients_bowl.971f7bd5.png",
+    "static/media/egg_vanilla.png": "/infoviz-a4/static/media/egg_vanilla.eb5d3ccf.png",
+    "static/media/egg_vanilla_bowl.png": "/infoviz-a4/static/media/egg_vanilla_bowl.9d3037a0.png",
+    "static/media/oven.png": "/infoviz-a4/static/media/oven.4e2efbd8.png",
+    "static/media/oven.gif": "/infoviz-a4/static/media/oven.f061ec42.gif",
+    "static/media/tray.png": "/infoviz-a4/static/media/tray.879b3759.png"
+  }
+}
