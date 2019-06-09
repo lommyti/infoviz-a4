@@ -148,6 +148,7 @@ render(){
           More
         </label>
       </div>
+      </div>
       <div class="customizationButtons">
 
       <p>Baking Powder</p>
@@ -233,6 +234,7 @@ render(){
 
 
     </div>
+    
   );
 }
 }
