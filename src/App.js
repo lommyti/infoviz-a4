@@ -88,33 +88,57 @@ class App extends React.Component {
   }
 
   handleChange = (e) => {
+    // this.updateValue(e);
+    // this.calculateScore();
+    // this.resizeCookie();
+    return new Promise((resolve, reject) => {
+        //do something for 5 seconds
+        console.log("E: " + e);
+        this.updateValue(e);
+        resolve();
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.calculateScore();
+            resolve();
+        });
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.resizeCookie();
+            resolve();
+        });
+    });
+  }
+
+  updateValue = (e) => {
+    console.log("changing " + e.target.name + " from " + this.state[e.target.name] + " to " + e.target.value );
     this.setState({
       [e.target.name]: e.target.value,
     });
-    this.calculateScore();
-    console.log(this.state.score);
+
   }
 
   calculateScore = () => {
     let attrs = ["sugar", "brownsugar", "butter", "butter_temp", "egg", "flour", "bakingsoda", "bakingpowder", "temp", "time"]
-    let newScore = 10;
-
+    let newScore = 9;
     for(let i = 0; i < attrs.length; i++) {
-      let attr = attrs[i]
-      newScore += parseInt(this.state[attr])
+      newScore += parseInt(this.state[attrs[i]])
     }
-    let newPosition =  newScore * (75/18);
-    let newMarginLeft = {marginLeft: newPosition + "%"};
-    let newCookieHeight = {width: Math.pow(newScore, .5) + "em", marginLeft:"18em", height:(newScore*2)+"em", marginTop:"-"+(newScore-9)+"em"};
-    let newCookieSpread = {height:(newScore*2)+"em", width:"auto", marginLeft:"-"+(newScore-9)+"em", marginTop:"-"+(newScore-9)+"em"}
+    console.log("changing score from " + this.state.score + " to " + newScore);
     this.setState({
       score: newScore,
+    })
+  }
+
+  resizeCookie = () => {
+    let newPosition =  this.state.score * (75/18);
+    let newMarginLeft = {marginLeft: newPosition + "%"};
+    let newCookieHeight = {width: Math.pow(this.state.score, .5) + "em", marginLeft:"18em", height:(this.state.score*2)+"em", marginTop:"-"+(this.state.score-9)+"em"};
+    let newCookieSpread = {height:(this.state.score*2)+"em", width:"auto", marginLeft:"-"+(this.state.score-9)+"em", marginTop:"-"+(this.state.score-9)+"em"}
+    this.setState({
       pointerLocation: newMarginLeft,
       cookieHeight: newCookieHeight,
       cookieSpread: newCookieSpread,
     })
-
-
   }
 
   showButterInfo = () => {
