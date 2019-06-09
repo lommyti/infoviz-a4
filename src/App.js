@@ -74,7 +74,18 @@ class App extends React.Component {
     return new Promise((resolve, reject) => {
         //do something for 5 seconds
         this.setState({texture_change_text: <Crunchy/>,
-        sugar:"1"})
+          sugar: "-1",
+          brownsugar: "-1",
+          butter: "-1",
+          butter_temp: "-1",
+          egg: "-1",
+          flour: "-1",
+          bakingsoda: "-1",
+          bakingpowder: "-1",
+          temp: "-1",
+          time: "-1",
+
+        })
         resolve();
     }).then(() => {
         return new Promise((resolve, reject) => {
@@ -90,12 +101,64 @@ class App extends React.Component {
   }
 
   setTextureChewy = () => {
-    this.setState({texture_change_text: <Chewy/>})
+    return new Promise((resolve, reject) => {
+        //do something for 5 seconds
+        this.setState({texture_change_text: <Crunchy/>,
+          sugar: "0",
+          brownsugar: "0",
+          butter: "0",
+          butter_temp: "0",
+          egg: "0",
+          flour: "0",
+          bakingsoda: "0",
+          bakingpowder: "0",
+          temp: "0",
+          time: "0",
+        })
+        resolve();
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.calculateScore();
+            resolve();
+        });
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.resizeCookie();
+            resolve();
+        });
+    });
   }
 
+
   setTextureCakey = () => {
-    this.setState({texture_change_text: <Cakey/>})
+    return new Promise((resolve, reject) => {
+        //do something for 5 seconds
+        this.setState({texture_change_text: <Cakey/>,
+          sugar: "1",
+          brownsugar: "1",
+          butter: "1",
+          butter_temp: "1",
+          egg: "1",
+          flour: "1",
+          bakingsoda: "1",
+          bakingpowder: "1",
+          temp: "1",
+          time: "1",
+        })
+        resolve();
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.calculateScore();
+            resolve();
+        });
+    }).then(() => {
+        return new Promise((resolve, reject) => {
+            this.resizeCookie();
+            resolve();
+        });
+    });
   }
+
 
   onDrag = (event, dragVal) => {
     event.preventDefault();
@@ -147,7 +210,7 @@ class App extends React.Component {
   }
 
   resizeCookie = () => {
-    let newPosition =  (this.state.score-1) * (75/18);
+    let newPosition =  (this.state.score) * (75/20);
     let newMarginLeft = {marginLeft: newPosition + "%"};
     let newCookieHeight = {width: (1.388889 + 0.6111111*this.state.score) + "em", marginLeft:"24em", height:(27.77778 - 0.7777778*this.state.score)+"em"};
     let newCookieSpread = {height:(27.77778 - 0.7777778*this.state.score)+"em", width:"auto"}
