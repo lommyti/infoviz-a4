@@ -53,7 +53,7 @@ class App extends React.Component {
         time: "0",
         score: 10,
         pointerLocation: {marginLeft: "37.5%"},
-        cookieHeight: {width: "auto", marginLeft: "20em"},
+        cookieHeight: {width: "auto", marginLeft: "24em"},
         cookieSpread: {height:"20em", width:"auto"},
 
      };
@@ -119,7 +119,7 @@ class App extends React.Component {
 
   calculateScore = () => {
     let attrs = ["sugar", "brownsugar", "butter", "butter_temp", "egg", "flour", "bakingsoda", "bakingpowder", "temp", "time"]
-    let newScore = 9;
+    let newScore = 10;
     for(let i = 0; i < attrs.length; i++) {
       newScore += parseInt(this.state[attrs[i]])
     }
@@ -130,10 +130,10 @@ class App extends React.Component {
   }
 
   resizeCookie = () => {
-    let newPosition =  this.state.score * (75/18);
+    let newPosition =  (this.state.score-1) * (75/18);
     let newMarginLeft = {marginLeft: newPosition + "%"};
-    let newCookieHeight = {width: Math.pow(this.state.score, .5) + "em", marginLeft:"18em", height:(this.state.score*2)+"em", marginTop:"-"+(this.state.score-9)+"em"};
-    let newCookieSpread = {height:(this.state.score*2)+"em", width:"auto", marginLeft:"-"+(this.state.score-9)+"em", marginTop:"-"+(this.state.score-9)+"em"}
+    let newCookieHeight = {width: (1.388889 + 0.6111111*this.state.score) + "em", marginLeft:"24em", height:(27.77778 - 0.7777778*this.state.score)+"em"};
+    let newCookieSpread = {height:(27.77778 - 0.7777778*this.state.score)+"em", width:"auto"}
     this.setState({
       pointerLocation: newMarginLeft,
       cookieHeight: newCookieHeight,
