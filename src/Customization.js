@@ -29,19 +29,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.sugar === 'less'} />
+          <input type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.sugar === "1"} />
           Less
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.sugar === 'regular'} />
+          <input defaultChecked type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.sugar === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.sugar === 'more'} />
+          <input type="radio" name="sugar" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.sugar === "-1"} />
           More
         </label>
       </div>
@@ -49,19 +49,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.brownsugar === 'less'} />
+          <input type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.brownsugar === "-1"} />
           Less
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.brownsugar === 'regular'} />
+          <input defaultChecked type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.brownsugar === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.brownsugar === 'more'} />
+          <input type="radio" name="brownsugar" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.brownsugar === "1"} />
           More
         </label>
       </div>
@@ -69,19 +69,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.butter === 'less'} />
+          <input type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.butter === "1"} />
           Less
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.butter === 'regular'} />
+          <input defaultChecked type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.butter === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.butter === 'more'} />
+          <input type="radio" name="butter" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.butter === "-1"} />
           More
         </label>
       </div>
@@ -91,19 +91,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="melted" selected={this.props.cookieData.butter_temp === 'melted'} />
+          <input type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.butter_temp === "-1"} />
           Melted
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.butter_temp === 'regular'} />
+          <input defaultChecked type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.butter_temp === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="cold" selected={this.props.cookieData.butter_temp === 'cold'} />
+          <input type="radio" name="butter_temp" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.butter_temp === "1"} />
           Cold
         </label>
       </div>
@@ -111,19 +111,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.egg === 'less'} />
+          <input type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.egg === "-1"} />
           Less
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.egg === 'regular'} />
+          <input defaultChecked type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.egg === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.egg === 'more'} />
+          <input type="radio" name="egg" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.egg === "1"} />
           More
         </label>
       </div>
@@ -132,22 +132,21 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.flour === 'less'} />
+          <input type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.flour === "-1"} />
           Less
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.flour === 'regular'} />
+          <input defaultChecked type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.flour === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.flour === 'more'} />
+          <input type="radio" name="flour" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.flour === "1"} />
           More
         </label>
-      </div>
       </div>
       <div class="customizationButtons">
 
@@ -155,19 +154,19 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="less" selected={this.props.cookieData.bakingpowder === 'less'} />
+          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.bakingpowder === "-1"} />
           Less
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.bakingpowder === 'regular'} />
+          <input defaultChecked type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.bakingpowder === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="more" selected={this.props.cookieData.bakingpowder === 'more'} />
+          <input type="radio" name="bakingpowder" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.bakingpowder === "1"} />
           More
         </label>
       </div>
@@ -175,38 +174,38 @@ render(){
 
       <div className="radio">
         <label>
-          <input type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="lower" selected={this.props.cookieData.temp === 'lower'} />
+          <input type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.temp === '-1'} />
           Lower
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.temp === 'regular'} />
+          <input defaultChecked type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.temp === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="higher" selected={this.props.cookieData.temp === 'higher'} />
+          <input type="radio" name="temp" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.temp === "1"} />
           Higher
         </label>
         <p>Baking Time</p>
 
       <div className="radio">
         <label>
-          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="shorter" selected={this.props.cookieData.time === 'shorter'} />
+          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="1" selected={this.props.cookieData.time === '1'} />
           Shorter
         </label>
       </div>
       <div className="radio">
         <label>
-          <input defaultChecked type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="regular" selected={this.props.cookieData.time === 'regular'} />
+          <input defaultChecked type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="0" selected={this.props.cookieData.time === "0"} />
           Regular
         </label>
       </div>
       <div className="radio">
         <label>
-          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="longer" selected={this.props.cookieData.time === 'longer'} />
+          <input type="radio" name="bakingtime" onClick={event => this.props.handleChange(event)} value="-1" selected={this.props.cookieData.time === "-1"} />
           Longer
         </label>
       </div>

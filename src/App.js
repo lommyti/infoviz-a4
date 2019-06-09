@@ -41,16 +41,17 @@ class App extends React.Component {
         stepFourInfo: null,
         stepFiveInfo: null,
 
-        sugar: 'regular',
-        brownsugar: 'regular',
-        butter: 'regular',
-        butter_temp: 'regular',
-        egg: 'regular',
-        flour: 'regular',
-        bakingsoda: 'regular',
-        bakingpowder: 'regular',
-        temp: 'regular',
-        time: 'regular',
+        sugar: "0",
+        brownsugar: "0",
+        butter: "0",
+        butter_temp: "0",
+        egg: "0",
+        flour: "0",
+        bakingsoda: "0",
+        bakingpowder: "0",
+        temp: "0",
+        time: "0",
+        score: 10,
      };
    }
 
@@ -86,7 +87,23 @@ class App extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(this.state)
+    this.calculateScore();
+    console.log(this.state.score);
+  }
+
+  calculateScore = () => {
+    let attrs = ["sugar", "brownsugar", "butter", "butter_temp", "egg", "flour", "bakingsoda", "bakingpowder", "temp", "time"]
+    let newScore = 10;
+
+    for(let i = 0; i < attrs.length; i++) {
+      let attr = attrs[i]
+      newScore += parseInt(this.state[attr])
+    }
+    this.setState({
+      score: newScore,
+    })
+
+
   }
 
   showButterInfo = () => {
