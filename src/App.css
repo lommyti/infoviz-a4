@@ -244,6 +244,7 @@ button:hover{
   display:block;
   float:right;
   padding-left: 8em;
+  padding-top: 3em;
   box-sizing: border-box;
   padding-bottom: 8em;
 }
@@ -267,7 +268,9 @@ button:hover{
 }
 
 .customizationImages img{
-  height: 20em;
+  height: 18em;
+  position: absolute;
+  transition: .4s ease-in-out;
 }
 
 .customizationPointer{
@@ -278,6 +281,7 @@ button:hover{
   margin-top: -30px;
   position: relative;
   z-index: 999;
+  transition: .2s ease-in-out;
 }
 
 table{

@@ -9,9 +9,7 @@ class Customization extends React.Component {
     constructor(props) {
      super(props);
      this.state = {
-       pointerLocation: {marginLeft: "37.5%"},
-       cookieHeight: {width: "auto"},
-       cookieSpread: {height:"20em", width:"auto"},
+
      };
    }
 
@@ -215,8 +213,8 @@ render(){
 
     </div>
       <div class="customizationImages">
-        <img src={cookieImg} style={this.state.cookieSpread}/>
-        <img src={cookieSideViewImg} style={this.state.cookieHeight}/>
+        <img src={cookieImg} style={this.props.cookieData.cookieSpread}/>
+        <img src={cookieSideViewImg} style={this.props.cookieData.cookieHeight}/>
       </div>
       </div>
       <div class="customizationBar">
@@ -224,7 +222,7 @@ render(){
         <div class="customizationLine"></div>
         <div class="customizationDivider"></div>
 
-        <div class="customizationPointer" style={this.state.pointerLocation}></div>
+        <div class="customizationPointer" style={this.props.cookieData.pointerLocation}></div>
 
         <div>
         <table>
@@ -234,7 +232,7 @@ render(){
 
 
     </div>
-    
+
   );
 }
 }

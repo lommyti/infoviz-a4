@@ -51,7 +51,11 @@ class App extends React.Component {
         bakingpowder: "0",
         temp: "0",
         time: "0",
-        score: 10,
+        score: 9,
+        pointerLocation: {marginLeft: "37.5%"},
+        cookieHeight: {width: "auto", marginLeft: "18em"},
+        cookieSpread: {height:"18em", width:"auto"},
+
      };
    }
 
@@ -99,8 +103,15 @@ class App extends React.Component {
       let attr = attrs[i]
       newScore += parseInt(this.state[attr])
     }
+    let newPosition =  newScore * (75/18);
+    let newMarginLeft = {marginLeft: newPosition + "%"};
+    let newCookieHeight = {width: Math.pow(newScore, .5) + "em", marginLeft:"18em", height:(newScore*2)+"em", marginTop:"-"+(newScore-9)+"em"};
+    let newCookieSpread = {height:(newScore*2)+"em", width:"auto", marginLeft:"-"+(newScore-9)+"em", marginTop:"-"+(newScore-9)+"em"}
     this.setState({
       score: newScore,
+      pointerLocation: newMarginLeft,
+      cookieHeight: newCookieHeight,
+      cookieSpread: newCookieSpread,
     })
 
 
